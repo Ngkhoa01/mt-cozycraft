@@ -33,7 +33,13 @@
     .btn.primary{background:linear-gradient(135deg,#8b5cf6,#6045b8);border-color:transparent;box-shadow:0 8px 25px #6d5bd044}
     .hero-card{min-height:290px;border:1px solid #514267;border-radius:22px;background:linear-gradient(145deg,#2b2140,#171521 70%);padding:25px;box-shadow:var(--shadow);position:relative;overflow:hidden}
     .hero-card:before{content:"";position:absolute;width:220px;height:220px;border-radius:50%;background:#a78bfa18;right:-45px;top:-55px;filter:blur(4px)}
-    .portal{height:150px;width:150px;margin:5px auto 18px;border-radius:50%;border:2px solid #b9a0ff88;box-shadow:0 0 0 12px #a78bfa12,0 0 55px #9b75ff77;display:grid;place-items:center;font-size:64px;background:radial-gradient(circle,#7355a966,#16131f 70%)}
+    .portal img { 
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
     .hero-card h3{text-align:center;margin:0}.hero-card p{text-align:center;color:var(--muted);margin:5px 0 0;font-size:13px}
     .section{padding:38px 0 55px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:22px}
     .section h2{font-size:28px;margin:5px 0}.section-head p{color:var(--muted);margin:0}
@@ -93,7 +99,9 @@
       <p class="lead">Cẩm năng cộng đồng dành cho người mới. Tìm hiểu các tính năng, khám phá những điều mới và chuẩn bị hành trang trước khi bước vào server.</p>
       <div class="actions"><a class="btn primary" href="#wiki">Khám phá Wiki →</a><a class="btn" href="#about">Về server</a></div>
     </div>
-    <div class="hero-card"><div class="portal">✧</div><h3>WELCOME, ADVENTURER</h3><p>Một thế giới — vô vàn hành trình.</p></div>
+    <div class="portal">
+  <img src="mt-cozycraft.jpg" alt="MT CozyCraft">
+</div>
   </section>
 
   <section class="section" id="wiki">

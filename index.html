@@ -54,6 +54,25 @@
     .hidden{display:none!important}
     @media(max-width:800px){.hero{grid-template-columns:1fr;padding-top:55px}.hero-card{max-width:480px;width:100%;margin:auto}.grid{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:560px){.links{display:none;position:absolute;top:64px;left:0;right:0;padding:18px 22px;background:#111018;border-bottom:1px solid var(--line);flex-direction:column}.links.open{display:flex}.menu{display:block}.grid,.results{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}.brand{font-size:13px}}
+  .discord-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #a78bfa;
+  font-weight: 700;
+  transition: .2s;
+}
+
+.discord-link:hover {
+  color: #7289da;
+  transform: translateY(-2px);
+}
+
+.discord-link svg {
+  width: 25px;
+  height: 25px;
+  fill: currentColor;
+} 
   </style>
 </head>
 <body>
@@ -108,25 +127,23 @@
     <div class="notice"><strong>Chào mừng đến với Wiki!</strong><br>Đây là trang wiki cộng đồng cho server мт-cozʏcʀᴀғт. Tham gia discord của chúng mình để biết thêm chi tiết.</div>
   </section>
 </main>
-<footer><div class="wrap footer-inner"><span>© <span id="year"></span> мт-cozʏcʀᴀғт Wiki</span><span>Fan-made community guide · Not affiliated with Mojang</span></div></footer>
-<script>
-  const input = document.getElementById('searchInput');
-  const cards = [...document.querySelectorAll('.result')];
-  const noResults = document.getElementById('noResults');
-  input.addEventListener('input', () => {
-    const q = input.value.trim().toLocaleLowerCase('vi');
-    let visible = 0;
-    cards.forEach(card => {
-      const match = (card.innerText + ' ' + card.dataset.terms).toLocaleLowerCase('vi').includes(q);
-      card.classList.toggle('hidden', !match); if(match) visible++;
-    });
-    noResults.classList.toggle('hidden', visible > 0);
-  });
-  document.querySelectorAll('[data-search]').forEach(link => link.addEventListener('click', () => {
-    input.value = link.dataset.search; input.dispatchEvent(new Event('input'));
-  }));
-  document.getElementById('year').textContent = new Date().getFullYear();
-  document.getElementById('menuBtn').addEventListener('click', () => document.getElementById('navLinks').classList.toggle('open'));
+<footer>
+  <div class="wrap footer-inner">
+    <span>© <span id="year"></span> мт-cozʏcʀᴀғт Wiki</span>
+    <span>Fan-made community guide · Not affiliated with Mojang</span>
+
+    <a class="discord-link"
+       href="https://discord.gg/mU8TWzNtFv"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Tham gia Discord MT-CozyCraft">
+      <svg viewBox="0 0 127.14 96.36" xmlns="http://www.w3.org/2000/svg">
+        <path d="M107.7 8.07A105.15 105.15 0 0 0 81.47 0a72.06 72.06 0 0 0-3.36 6.84 97.68 97.68 0 0 0-29.1 0A72.37 72.37 0 0 0 45.65 0a105.89 105.89 0 0 0-26.25 8.09C2.79 32.65-1.7 56.6.55 80.21a105.73 105.73 0 0 0 32.16 16.15 77.7 77.7 0 0 0 6.89-11.12 68.42 68.42 0 0 1-10.85-5.18c.91-.67 1.8-1.37 2.66-2.08a75.9 75.9 0 0 0 64.44 0c.87.71 1.76 1.41 2.66 2.08a68.68 68.68 0 0 1-10.87 5.19 77 77 0 0 0 6.89 11.11 105.25 105.25 0 0 0 32.18-16.15c2.64-27.38-4.52-51.11-18.99-72.14Z"/>
+      </svg>
+      Tham gia Discord
+    </a>
+  </div>
+</footer>
 </script>
 </body>
 </html>
